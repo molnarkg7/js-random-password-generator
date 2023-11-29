@@ -1,4 +1,6 @@
 const generateBtn = document.getElementById("generate-btn");
+const copyBtn = document.getElementById("copy-btn");
+const resetBtn = document.getElementById("reset-btn");
 const uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
 const numbers = "0123456789";
@@ -40,4 +42,30 @@ function displayPassword(password) {
   passwordElement.textContent = password;
 }
 
+function copyPassword() {
+  const passwordElement = document.querySelector(".password");
+  const password = passwordElement.textContent;
+
+  if (password === "") {
+    alert("Generate a password first before copying.");
+    return;
+  }
+
+  navigator.clipboard
+    .writeText(password)
+    .then(() => {
+      alert("Password copied to clipboard!");
+    })
+    .catch((err) => {
+      console.error("Unable to copy to clipboard", err);
+      alert("Error copying to clipboard");
+    });
+}
+
+function reset() {
+  window.location.reload();
+}
+
 generateBtn.addEventListener("click", generatePassword);
+copyBtn.addEventListener("click", copyPassword);
+resetBtn.addEventListener("click", reset);
