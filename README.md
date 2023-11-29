@@ -1,7 +1,7 @@
 # JS age calculator
 
 ## Live Site URL: 
-- [https://molnarkg7.github.io/js-age-calculator/](https://molnarkg7.github.io/js-random-password-generator/)
+- [https://molnarkg7.github.io/js-random-password-generator/](https://molnarkg7.github.io/js-random-password-generator/)
 
 ## Build With
 - VS Code
